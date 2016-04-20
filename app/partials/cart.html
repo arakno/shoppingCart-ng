@@ -1,0 +1,59 @@
+<p class="text-info">
+    This is your shopping cart. Here you can edit the items, 
+    go back to the store, or check out.
+</p>
+
+
+<div>    
+      
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        
+        <!-- empty cart message -->
+        <tr ng-hide="cart.getItems().length" >
+            <td class="text-info" colspan="4">
+                Your cart is empty.
+            </td>
+        </tr>        
+        
+        <tr ng-repeat="item in cart.getItems() | orderBy:'name'"">
+            <td><span>{{item.product.name}}</span></td>           
+            <td><input type="number" ng-model="item.quantity"></td>
+            <td><span>{{item.product.price}}</span></td>
+            <td>{{item.quantity * item.product.price | currency:"£"}}</td>
+            <td>
+                [<a href ng-click="cart.removeItem(item)">X</a>]
+            </td>
+        </tr>
+        
+        <tr>
+          <td>Add a delivery option:</td>          
+          <td><select ng-model="delivery" ng-options="delivery.name for delivery in deliveries"></select></td>
+            <td></td>
+            <td></td>
+          <td>{{delivery.cost | currency:"£"}}</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total:</td>
+            <td><strong>{{cart.total(delivery) | currency:"£"}}</strong></td>
+        </tr>
+        
+        
+    </table>
+    
+    <div class="u-pull-right">
+    <a href="#/view3" class="button button-primary" ng-show="cart.getItems().length">
+        <i class="icon-trash icon-white" />Checkout</a>      
+    </div>
+    
+    
+</div>

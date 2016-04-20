@@ -1,0 +1,24 @@
+<p class="text-info">
+    Welcome to our Store.<br />
+    Please select the products you want.
+</p>
+
+<table id="products">
+
+    <tr ng-repeat="product in products | orderBy:'name'" >
+        <td><img src="img/pic.jpg" width="80" height="80" alt="{{product.name}}" /></td>
+        <td>
+            <a href="#/products/{{product.sku}}"><strong>{{product.name}}</strong></a><br />
+            {{product.description}}
+        </td>
+        <td>
+            {{product.price | currency:"£"}}
+        </td>
+        <td>
+            <a href="" class="button button-primary" ng-click="addToCart(product)">
+                add to cart
+            </a>
+        </td>
+    </tr>
+
+</table>
