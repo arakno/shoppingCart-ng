@@ -68,10 +68,6 @@ angular.module('myApp.services', [])
         sum += item.product.price * item.quantity;
       });
 
-      this.countItems = function () {
-        return items.length;
-      }
-
       if (delivery) {
         sum += delivery.cost;
       }

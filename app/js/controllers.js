@@ -19,5 +19,7 @@ angular.module('myApp.controllers', ['myApp.services'])
     $scope.addToCart = function(product){
       cartService.addToCart(product,1);
     };
+    
+    $scope.countItems = cartService.getItems().length;
 
   }]);

@@ -4,7 +4,12 @@
 </p>
 
 <table id="products">
-
+    <tr>
+        <td colspan="4">
+                <strong>{{countItems}}</strong> items in your shopping cart
+            </a>
+        </td>
+    </tr>
     <tr ng-repeat="product in products | orderBy:'name'" >
         <td><img src="img/pic.jpg" width="80" height="80" alt="{{product.name}}" /></td>
         <td>

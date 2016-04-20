@@ -28,23 +28,24 @@
             <td><span>{{item.product.price}}</span></td>
             <td>{{item.quantity * item.product.price | currency:"£"}}</td>
             <td>
-                [<a href ng-click="cart.removeItem(item)">X</a>]
+                <a href="#" class="button button-delete" ng-click="cart.removeItem(item)">X</a>
             </td>
         </tr>
         
         <tr>
+          <td></td>
           <td>Add a delivery option:</td>          
           <td><select ng-model="delivery" ng-options="delivery.name for delivery in deliveries"></select></td>
-            <td></td>
-            <td></td>
           <td>{{delivery.cost | currency:"£"}}</td>
+            <td></td>
+          
         </tr>
         <tr>
             <td></td>
             <td></td>
-            <td></td>
             <td>Total:</td>
             <td><strong>{{cart.total(delivery) | currency:"£"}}</strong></td>
+            <td></td>
         </tr>
         
         
@@ -52,7 +53,7 @@
     
     <div class="u-pull-right">
     <a href="#/view3" class="button button-primary" ng-show="cart.getItems().length">
-        <i class="icon-trash icon-white" />Checkout</a>      
+        Checkout</a>      
     </div>
     
     
