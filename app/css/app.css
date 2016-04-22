@@ -258,11 +258,15 @@ input[type="button"].button-primary:focus {
   border-color: #1EAEDB; }
 
 .button-delete {
-  background:#EA3313;
-  font-family: arial;
-  font-size: 14px;
-  font-weight: bold;
-  color: #fff;
+    background: #EA3313;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    height: auto;
+    padding: 6px;
+    line-height: 1;
+    vertical-align: middle;
   }
   
 /* Forms

@@ -5,7 +5,7 @@
 
 <table id="products">
     <tr>
-        <td colspan="4">
+        <td colspan="4" class="u-pull-right">
                 <strong>{{countItems}}</strong> items in your shopping cart
             </a>
         </td>
@@ -20,7 +20,7 @@
             {{product.price | currency:"£"}}
         </td>
         <td>
-            <a href="" class="button button-primary" ng-click="addToCart(product)">
+            <a href="" class="button button-primary" ng-click="addToCart(product); countItems()">
                 add to cart
             </a>
         </td>
